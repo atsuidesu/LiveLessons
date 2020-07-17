@@ -12,6 +12,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import leasepool.LeasePool;
+import leasepool.LeasePoolStrategy;
 import utils.Options;
 import utils.StreamsUtils;
 
@@ -218,7 +219,7 @@ public class PalantirManagerTest {
      * to gaze into a Palantir.
      */
     private static void gazeIntoPalantir() {
-        final threadName = Thread.currentThread().getName();
+        final String threadName = Thread.currentThread().getName();
 
         // Iterate for the designated number of times each Being can
         // gaze into a Palantir.
@@ -242,7 +243,7 @@ public class PalantirManagerTest {
                         // Gaze at Palantir for alloted time.
                         palantir.gaze();
                     } catch (InterruptedException e) {
-                        printDebugging(threadName,
+                        printDebugging(threadName 
                                        + " gazing interrupted since lease expired"
                                        + palantir.getId());
                     }
